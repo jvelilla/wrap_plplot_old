@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<project name="plplot" default="help">
+
+	<description>
+		description: "Wrap_c: plplot wrapper"
+		copyright: "Copyright (c) 2002, Andreas Leitner and others"
+		license: "Eiffel Forum License v2 (see forum.txt)"
+		date: "$Date: 2004/10/25 09:27:15 $"
+		revision: "$Revision: 1.22 $"
+	</description>
+
+	<inherit>
+		<parent location="${WRAP_C}/misc/wrap_c_library.eant">
+			<redefine target="init_wrap_c"/>
+			<redefine target="post_process"/>
+		</parent>
+	</inherit>
+
+
+
+
+
+<!-- Implementation -->
+
+	<target name="init_wrap_c">
+		<set name="system_dir" value="${WRAP_C}/example/plplot/library"/>
+		<set name="wrap_c.library_name" value="plplot"/>
+		<set name="wrap_c.full_header_name" value="$WRAP_C/example/plplot/library/manual_wrapper/c/include/plplot.h"/>
+		<set name="wrap_c.short_header_name" value="plplot.h"/>
+		<set name="wrap_c.use_config_file" value="True"/>
+	</target>
+
+
+ <target name="post_process" depend="init">
+    <description>
+      Post process Eiffel wrapped code (script defined by user).
+    </description>
+    <echo message="Posptroces wrap for ${wrap_c.library_name} using script escript" if="${wrap_c.verbose}=--verbose"/>
+  	<exec executable="escript"/>
+  </target>
+
+</project>

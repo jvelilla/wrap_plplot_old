@@ -1,0 +1,97 @@
+{
+	"path": "./generated_wrapper/eiffel",	
+	"rename_features": [
+					{ 
+						"class":"PLPLOT_FUNCTIONS_API", 
+						"search_for":"c_p", 
+						"replace_with":"p" , 
+						"exclude": ["c_pl_merge_opts", "c_pl_alloc2d_grid", "c_pl_free2d_grid", "c_pl_min_max2d_grid", "c_pl_static2d_grid", "c_pls_error"]
+					}
+				  ],	
+
+	"update_features": [
+						  {"class": "PLPLOT_FUNCTIONS_API",
+						   "features": 
+						   		[	{
+							 		"name": "plgriddata", 
+							 		"at_line": 351,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},
+									{
+							 		"name": "plgver", 
+							 		"at_line": 366,	
+							 		"lines":4, 
+							 		"action": "update",
+							 		"update":"\tplgver (p_ver: STRING)\r\n\t\tlocal\r\n\t\t\tc_str: C_STRING\r\n\t\tdo\r\n\t\t\tcreate c_str.make (p_ver)\r\n\t\t\tc_plgver ( c_str.item)\r\n\t\t\tp_ver.append (c_str.string)\r\n\t\tend"
+									},
+									{
+							 		"name": "pllegend", 
+							 		"at_line": 429,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},
+									{
+							 		"name": "plscmap0", 
+							 		"at_line": 626,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},
+									{
+							 		"name": "plsurf3d", 
+							 		"at_line": 1016,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},
+									{									
+							 		"name": "plsurf3dl", 
+							 		"at_line": 1021,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},
+									{									
+							 		"name": "pls_error", 
+							 		"at_line": 1159,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},
+									{									
+							 		"name": "pl_static2d_grid", 
+							 		"at_line": 1179,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},
+									{									
+							 		"name": "pl_alloc2d_grid", 
+							 		"at_line": 1184,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},		
+									{									
+							 		"name": "pl_free2d_grid", 
+							 		"at_line": 1189,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+									},								
+									{									
+							 		"name": "pl_min_max2d_grid", 
+							 		"at_line": 1194,	
+							 		"lines":4, 
+							 		"action": "delete",
+							 		"update":""
+							 		}
+								]
+							}
+						]
+}				
+
+

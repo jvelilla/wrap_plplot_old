@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<ewg_config name="plplot">
+
+  <rule_list>
+    <!-- Ignore everything that starts with and underscore. -->
+    <!-- It often causes trouble and is usually not meant to be in the public interface -->
+    <rule>
+      <match>
+	      <identifier name="_.*"/>
+      </match>
+      <wrapper type="none">
+      </wrapper>
+    </rule>
+    
+    <rule>
+      <match>
+        <identifier name="c_pl.*"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+    </rule>
+  <rule>
+      <match>
+        <identifier name="plMinMax2dGrid.*"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+  <rule>
+      <match>
+        <identifier name="plFree2dGrid.*"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+
+  <!-- Callback rules -->
+
+  <rule>
+      <match>
+        <identifier name="PLMAPFORM_callback"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule> 
+  <rule>
+      <match>
+        <identifier name="PLTRANSFORM_callback"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+  <rule>
+      <match>
+        <identifier name="PLLABEL_FUNC_callback"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+  <rule>
+      <match>
+        <identifier name="PLF2EVAL_callback"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+  <rule>
+      <match>
+        <identifier name="PLFILL_callback"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+  <rule>
+      <match>
+        <identifier name="PLDEFINED_callback"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+
+<!--  -->
+
+<!-- Step 2 Option table
+  <rule>
+      <match>
+        <identifier name="PLOptionTable"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+-->
+  <rule>
+      <match>
+        <identifier name="plMergeOpts"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+
+  <rule>
+      <match>
+        <identifier name="plAlloc2dGrid"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+  <rule>
+      <match>
+        <identifier name="PLcGrid.*"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+  <rule>
+      <match>
+        <identifier name="plStatic2dGrid"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+  <rule>
+      <match>
+        <identifier name="plsError"/>
+      </match>
+      <wrapper type="default">
+      </wrapper>
+  </rule>
+
+
+  
+ <!-- And the rest shall be ignored -->
+  <rule>
+      <match>
+      </match>
+      <wrapper type="none">
+      </wrapper>
+  </rule>
+  </rule_list>
+
+</ewg_config>

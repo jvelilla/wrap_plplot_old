@@ -18,9 +18,11 @@ feature
 			create plc_grid2.make
 			nx := a_rows
 			ny := a_columns
-			create xg_impl.make_empty
-			create yg_impl.make_empty
+			create xg_impl.make (nx, ny)
+			create yg_impl.make (nx, ny)
 			create zg_impl.make_empty
+			plc_grid2.set_xg (xg.pointer)
+			plc_grid2.set_yg (yg.pointer)
 			plc_grid2.set_nx (nx)
 			plc_grid2.set_ny (ny)
 		ensure
@@ -62,20 +64,6 @@ feature -- Access
 		end
 
 feature -- Change Element
-
---	set_xg_from_array (a: ARRAY [REAL_64]; a_nx, a_ny: INTEGER)
---		do
---			create xg.make_by_pointer (a.area.base_address, a_nx, a_ny)
---			nx := a_nx
---			ny := a_ny
---		end
-
---	set_yg_from_array (a: ARRAY [REAL_64]; a_nx, a_ny: INTEGER)
---		do
---			create yg.make_by_pointer (a.area.base_address, a_nx, a_ny)
---			nx := a_nx
---			ny := a_ny
---		end
 
 	set_xg (a: PLPLOT_GRID2)
 		require

@@ -45,7 +45,7 @@ feature {NONE} --Initialization
 				--    // for this application.  Nevertheless, it should be looked into as a
 				--    // likely rendering issue with plbuf.
 
-			 -- Initialize plplot
+				 -- Initialize plplot
 
 			 initialize
 

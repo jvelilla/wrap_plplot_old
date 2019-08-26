@@ -179,13 +179,9 @@ feature -- Access
 		end
 
 
-	plcont (f: PLPLOT_GRID2; nx: INTEGER; ny: INTEGER; kx: INTEGER; lx: INTEGER; ky: INTEGER; ly: INTEGER; clevel: ARRAY [REAL_64]; nlevel: INTEGER; pltr: POINTER; pltr_data: detachable PLC_GRID2)
+	plcont (f: PLPLOT_GRID2; nx: INTEGER; ny: INTEGER; kx: INTEGER; lx: INTEGER; ky: INTEGER; ly: INTEGER; clevel: ARRAY [REAL_64]; nlevel: INTEGER; pltr: POINTER; pltr_data: POINTER)
 		do
-			if attached pltr_data then
-				c_plcont (f.pointer, nx, ny, kx, lx, ky, ly, clevel.area.base_address, nlevel, pltr, pltr_data.pointer)
-			else
-				c_plcont (f.pointer, nx, ny, kx, lx, ky, ly, clevel.area.base_address, nlevel, pltr, default_pointer)
-			end
+			c_plcont (f.pointer, nx, ny, kx, lx, ky, ly, clevel.area.base_address, nlevel, pltr, pltr_data)
 		end
 
 
@@ -356,11 +352,7 @@ feature -- Access
 		end
 
 	plmap (mapform: POINTER; name: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64)
-		local
-			c_string: C_STRING
 		do
-
---			create c_string.make_by_pointer_and_count (name.area.base_address, name.count + 1)
 			c_plmap (mapform, name.area.base_address, minx, maxx, miny, maxy)
 		end
 

@@ -7,8 +7,8 @@ note
 class PLTRANSFORM_DISPATCHER
 
 
---inherit
---	PLTRANSFORM_CALLBACK_DISPATCHER
+inherit
+	PLTRANSFORM_CALLBACK_DISPATCHER
 
 create
 	make
@@ -25,7 +25,7 @@ feature -- Initialization
 
 	set_callback (a_callback: PROCEDURE [TUPLE [x: REAL_64; y: REAL_64; tx: POINTER; ty: POINTER; a_data: POINTER]])
 		do
---			set_pltransform_callback_entry (Current, $a_callback)
+			set_pltransform_callback_entry (Current, $a_callback)
 		end
 
 	on_callback (x: REAL_64; y: REAL_64; tx: POINTER; ty: POINTER; a_data: POINTER)
@@ -66,13 +66,9 @@ feature -- Access
 
 feature {ANY}
 
-	plcont (f: PLPLOT_GRID2; nx: INTEGER; ny: INTEGER; kx: INTEGER; lx: INTEGER; ky: INTEGER; ly: INTEGER; clevel: ARRAY [REAL_64]; nlevel: INTEGER; pltr_data: detachable PLC_GRID2)
+	plcont (f: PLPLOT_GRID2; nx: INTEGER; ny: INTEGER; kx: INTEGER; lx: INTEGER; ky: INTEGER; ly: INTEGER; clevel: ARRAY [REAL_64]; nlevel: INTEGER; pltr_data: POINTER)
 		do
---			if attached pltr_data then
---				{PLPLOT_FUNCTIONS_API}.c_plcont (f.pointer, nx, ny, kx, lx, ky, ly, clevel.area.base_address, nlevel, c_dispatcher, pltr_data.pointer)
---			else
---				{PLPLOT_FUNCTIONS_API}.c_plcont (f.pointer, nx, ny, kx, lx, ky, ly, clevel.area.base_address, nlevel, c_dispatcher, default_pointer)
---			end
+			{PLPLOT_FUNCTIONS_API}.c_plcont (f.pointer, nx, ny, kx, lx, ky, ly, clevel.area.base_address, nlevel, c_dispatcher, pltr_data)
 		end
 
 end

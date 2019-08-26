@@ -27,8 +27,7 @@ feature -- Initialization
 			l_dispatcher: PLTRANSFORM_CALLBACK_DISPATCHER
 		do
 
-				-- TODO fix issues.
-				-- with custom callbacks
+				-- TODO fix issues, this example does not works as expected.
 
 			mark := 1500
 			space := 1500
@@ -228,7 +227,7 @@ feature -- Transformation function
 			across  0 |..| 9 as i loop
 				lev[i.item + 1] := 0.05 + 0.10 *  i.item;
 			end
-			
+
 			plcont( z, RPTS, THETAPTS, 1, RPTS, 1, THETAPTS, lev, 10, pltr2_address, cgrid2.pointer );
 		    plcol0( 1 )
 		    pllab( "", "", "Polar Contour Plot" );

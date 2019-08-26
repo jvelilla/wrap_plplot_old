@@ -3,41 +3,84 @@
 <project name="plplot" default="help">
 
 	<description>
-		description: "Wrap_c: plplot wrapper"
-		copyright: "Copyright (c) 2002, Andreas Leitner and others"
-		license: "Eiffel Forum License v2 (see forum.txt)"
-		date: "$Date: 2004/10/25 09:27:15 $"
-		revision: "$Revision: 1.22 $"
+	    description: "ewg example: plplot"
+	    copyright: "Copyright (c) 2002, Andreas Leitner and others"
+	    license: "Eiffel Forum License v2 (see forum.txt)"
+	    date: "$Date: 2008-05-14 22:48:16 +0900 (Wed, 14 May 2008) $"
+	    revision: "$Revision: 3 $"
 	</description>
 
-	<inherit>
-		<parent location="${WRAP_C}/misc/wrap_c_library.eant">
-			<redefine target="init_wrap_c"/>
-			<redefine target="post_process"/>
-		</parent>
-	</inherit>
 
+	<description>
+	    description: "Eiffel plplot Library"
+	</description>
 
-
-
-
-<!-- Implementation -->
+	<target name="help">
+	    <echo message="usage:"/>
+	    <echo message=" geant wrap_c"/>
+	    <echo message=" geant wrap_c_pre_script"/>
+	    <echo message=" geant wrap_c_post_script"/>
+	    <echo message=" geant compile"/>
+	    <echo message=" geant clean"/>
+	    <echo message=" geant clobber"/>
+	</target>
+    <!-- Implementation -->
 
 	<target name="init_wrap_c">
-		<set name="system_dir" value="${WRAP_C}/example/plplot/library"/>
-		<set name="wrap_c.library_name" value="plplot"/>
-		<set name="wrap_c.full_header_name" value="$WRAP_C/example/plplot/library/manual_wrapper/c/include/plplot.h"/>
-		<set name="wrap_c.short_header_name" value="plplot.h"/>
-		<set name="wrap_c.use_config_file" value="True"/>
+	    <set name="system_dir" value="${cwd}"/>
+	    <set name="wrap_c.library_name" value="plplot"/>
+	    <set name="wrap_c.full_header_name" value="${cwd}${path_separator}C${path_separator}include${path_separator}plplot.h"/>
+    	<set name="wrap_c.use_config_file" value="True"/>
+    	<set name="wrap_c.verbose" value="--verbose"/>
+    	<set name="wrap_c.wrapper_dir" value="${system_dir}${path_separator}generated_wrapper"/>
+  	</target>
+
+	<target name="wrap_c" depend="init_wrap_c">
+       <description>
+         Generate wrapper files
+        </description>
+      <set name="wrap_c.config_file_option" value=""/>
+      <set name="wrap_c.config_file_option" value="--config=config.xml" if="${wrap_c.use_config_file}=True"/> 
+      <exec executable="wrap_c ${wrap_c.verbose} --output-dir=${wrap_c.wrapper_dir} --full-header=${wrap_c.full_header_name} ${wrap_c.config_file_option}"/>
+    </target>
+
+	<target name="wrap_c_pre_script" depend="init_wrap_c">
+	       <description>
+	           Generate wrapper files
+	        </description>
+	  
+	      <set name="wrap_c.config_file_option" value="--config=config.xml" if="${wrap_c.use_config_file}=True"/> 
+	      <exec executable="wrap_c ${wrap_c.verbose} --script_pre_process=${cwd}/pre_script.bat --output-dir=${wrap_c.wrapper_dir} --full-header=${wrap_c.full_header_name} ${wrap_c.config_file_option}"/>
 	</target>
 
+	<target name="wrap_c_post_script" depend="init_wrap_c">
+	       <description>
+	           Generate wrapper files
+	        </description>
+		    <set name="script" value="post_script.bat" if="${is_windows}" />
+		    <set name="script" value="post_script.sh" unless="${is_windows}" />
+	        <set name="wrap_c.config_file_option" value="--config=config.xml" if="${wrap_c.use_config_file}=True"/> 
+	        <exec executable="wrap_c ${wrap_c.verbose} --script_post_process=${cwd}${path_separator}${script} --output-dir=${wrap_c.wrapper_dir} --full-header=${wrap_c.full_header_name} ${wrap_c.config_file_option}"/>
+	</target>
 
- <target name="post_process" depend="init">
-    <description>
-      Post process Eiffel wrapped code (script defined by user).
-    </description>
-    <echo message="Posptroces wrap for ${wrap_c.library_name} using script escript" if="${wrap_c.verbose}=--verbose"/>
-  	<exec executable="escript"/>
-  </target>
+	<target name="compile_tool" depend="init_wrap_c">
+	    <description>
+	        Compile tool
+	    </description>
+	        <exec executable="ec -config ../tools/escript/escript.ecf -finalize -c_compile -project_path ."/>
+	</target>
 
+	<target name="clean">
+	    <echo message="- Clean [Eiffel LibGit2]" />
+	    <delete directory="C/spec/${ISE_PLATFORM}" unless="${is_windows}"/>
+	    <delete directory="C\spec\${ISE_C_COMPILER}\${ISE_PLATFORM}" if="${is_windows}" />
+	    <delete directory="generated_wrapper"/>
+	    <delete file="plplot_cpp.h"/>
+	</target>
+
+	<target name="compile" depend="init_wrap_c"> 
+	    <geant file="${wrap_c.wrapper_dir}${path_separator}c${path_separator}src${path_separator}geant.eant" target="compile" dir="${wrap_c.wrapper_dir}${path_separator}c${path_separator}src"/>
+	</target>
+
+	<target name="clobber" depend="clean" />
 </project>

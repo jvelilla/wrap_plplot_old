@@ -43,29 +43,25 @@ feature {ANY} -- Member Access
 			set_c_opt (item, (create {C_STRING}.make (a_value)).item )
 		end
 
-	handler: detachable FUNCTION [TUPLE [STRING, STRING, POINTER], INTEGER]
+	handler: POINTER
 			-- Access member `handler`
 		require
 			exists: exists
 		do
-			if attached dispatcher_table_handler as l_op then
-				if c_handler (item).is_equal (l_op.ptr) then
-					Result :=l_op.callback
-				end
-			end
+			Result := c_handler (item)
+		ensure
+			result_correct: Result = c_handler (item)
 		end
 
-	set_handler (a_value: FUNCTION [TUPLE [STRING, STRING, POINTER], INTEGER]) 
+	set_handler (a_value: POINTER) 
 			-- Change the value of member `handler` to `a_value`.
 		require
 			exists: exists
 		do
-			dispatcher_table_handler := [a_value, $a_value]
-			set_c_handler (item, $a_value)
+			set_c_handler (item, a_value)
+		ensure
+			handler_set: a_value = handler
 		end
-
-	dispatcher_table_handler: detachable TUPLE [callback:FUNCTION [TUPLE [STRING, STRING, POINTER], INTEGER]; ptr: TYPED_POINTER [FUNCTION [TUPLE [STRING, STRING, POINTER], INTEGER]]]
-		 -- callback register table for member `handler`
 
 	client_data: POINTER
 			-- Access member `client_data`

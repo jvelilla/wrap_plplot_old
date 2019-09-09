@@ -1,11 +1,17 @@
-#How to generate the code?
+# How to generate the code?
 
-# Requirements
-You need to have a binary version of WrapC tool and for plplot you will need to compile the ecript tool (tools/escript) and be able to
-execute then form the library folder.
+## Requirements
+You need to have a binary version of WrapC tool and for plplot you will need to compile the escript tool (tools/escript) and be able to
+execute them form the library folder.
+
+Before to regenerated the generated code, remove the folder generated_wrapper folder.
 
 ## Using geant
 Wrap plplot library
+$LIB_PATH is the path to the library folder where you checkout the wrap_plplot library.
+
+Go to the $LIB_PATH/library
+
 ```
     geant wrap_c  -- Wrap C plplot library and generate the code under the folder generated_wrapper
 ```
@@ -27,7 +33,7 @@ Compile the C library
   
   Wrap plplot library  
   ```
-    wrap_c --verbose --output-dir=$LIB_PATH/generated_wrapper --full-header=$LIB_PATH/C/include/plplot.h config.xml
+    wrap_c --verbose --output-dir=$LIB_PATH/library/generated_wrapper --full-header=$LIB_PATH/library/C/include/plplot.h config.xml
   ```
   
 Postprocessing the generated code.

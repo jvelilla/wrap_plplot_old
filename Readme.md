@@ -2,8 +2,8 @@
 
 ## Wrapped using [WrapC](https://github.com/eiffel-wrap-c/WrapC) tool.
 
-A library that enable to use plplot from Eiffel code. Work with EiffelStudio. Currently only working on Windows and tested with
-version [5.15.0](https://sourceforge.net/projects/plplot/files/plplot/5.15.0%20Source/)
+A library that enable to use plplot from Eiffel code. Currently only working on Windows and tested with
+version Plplot [5.15.0](https://sourceforge.net/projects/plplot/files/plplot/5.15.0%20Source/)
 
 ## Installation
 

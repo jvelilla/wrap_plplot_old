@@ -233,4 +233,6 @@ feature -- Externals
 			]"
 		end
 
+feature -- Externals Address
+
 end

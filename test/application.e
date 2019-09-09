@@ -16,7 +16,7 @@ feature {NONE} -- Initialization
 --			example_7
 --			example_8
 --			example_9
---			example_10 -- Todo fix issues, best way to represent a custom callback
+			example_10 -- Todo fix issues, best way to represent a custom callback
 --			example_11
 --			example_12
 --			example_13
@@ -26,7 +26,7 @@ feature {NONE} -- Initialization
 --			example_18
 --			example_19
 --			example_20 -- requires to build plplot with shapelib.
-			example_21
+--			example_21
 		end
 
 	example_1

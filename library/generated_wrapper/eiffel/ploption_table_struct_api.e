@@ -25,14 +25,17 @@ feature -- Measurement
 
 feature {ANY} -- Member Access
 
-	opt: STRING
+	opt:  detachable STRING
 			-- Access member `opt`
 		require
 			exists: exists
 		do
-			Result := (create {C_STRING}.make_by_pointer (c_opt (item))).string
+			if attached c_opt (item) as l_ptr then
+				Result := (create {C_STRING}.make_by_pointer (l_ptr)).string
+			end
 		ensure
-			result_correct: Result.same_string ((create {C_STRING}.make_by_pointer (c_opt (item))).string)
+			result_void: Result = Void implies c_opt (item) = default_pointer
+			result_not_void: attached Result as l_result implies l_result.same_string ((create {C_STRING}.make_by_pointer (item)).string)
 		end
 
 	set_opt (a_value: STRING) 
@@ -123,14 +126,17 @@ feature {ANY} -- Member Access
 			mode_set: a_value = mode
 		end
 
-	syntax: STRING
+	syntax:  detachable STRING
 			-- Access member `syntax`
 		require
 			exists: exists
 		do
-			Result := (create {C_STRING}.make_by_pointer (c_syntax (item))).string
+			if attached c_syntax (item) as l_ptr then
+				Result := (create {C_STRING}.make_by_pointer (l_ptr)).string
+			end
 		ensure
-			result_correct: Result.same_string ((create {C_STRING}.make_by_pointer (c_syntax (item))).string)
+			result_void: Result = Void implies c_syntax (item) = default_pointer
+			result_not_void: attached Result as l_result implies l_result.same_string ((create {C_STRING}.make_by_pointer (item)).string)
 		end
 
 	set_syntax (a_value: STRING) 
@@ -141,14 +147,17 @@ feature {ANY} -- Member Access
 			set_c_syntax (item, (create {C_STRING}.make (a_value)).item )
 		end
 
-	desc: STRING
+	desc:  detachable STRING
 			-- Access member `desc`
 		require
 			exists: exists
 		do
-			Result := (create {C_STRING}.make_by_pointer (c_desc (item))).string
+			if attached c_desc (item) as l_ptr then
+				Result := (create {C_STRING}.make_by_pointer (l_ptr)).string
+			end
 		ensure
-			result_correct: Result.same_string ((create {C_STRING}.make_by_pointer (c_desc (item))).string)
+			result_void: Result = Void implies c_desc (item) = default_pointer
+			result_not_void: attached Result as l_result implies l_result.same_string ((create {C_STRING}.make_by_pointer (item)).string)
 		end
 
 	set_desc (a_value: STRING) 

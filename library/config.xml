@@ -81,7 +81,7 @@
 
 <!--  -->
 
-<!-- Step 2 Option table -->
+<!-- Step 2 Option table -
   <rule>
       <match>
         <identifier name="PLOptionTable"/>
@@ -97,6 +97,7 @@
       <wrapper type="default">
       </wrapper>
   </rule>
+-->
 
   <rule>
       <match>

@@ -34,7 +34,8 @@ inherit
 			plmap as plmap_api,
 			plmapfill as plmapfill_api,
 			plmapline as plmapline_api,
-			plimage as plimage_api
+			plimage as plimage_api,
+			pl_static2d_grid as pl_static2d_grid_api
 		end
 
 feature -- Access

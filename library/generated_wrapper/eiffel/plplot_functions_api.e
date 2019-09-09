@@ -45,17 +45,17 @@ feature -- Access
 			]"
 		end
 
-	plaxes (x0: REAL_64; y0: REAL_64; xopt: STRING; xtick: REAL_64; nxsub: INTEGER; yopt: STRING; ytick: REAL_64; nysub: INTEGER)
+	plaxes (x0: REAL_64; y0: REAL_64; xopt: STRING; xtick: REAL_64; nxsub: INTEGER; yopt: STRING; ytick: REAL_64; nysub: INTEGER) 
 		do
 			c_plaxes (x0, y0,  (create {C_STRING}.make (xopt)).item, xtick, nxsub,  (create {C_STRING}.make (yopt)).item, ytick, nysub)
 		end
 
-	plbin (nbin: INTEGER; x: POINTER; y: POINTER; opt: INTEGER)
+	plbin (nbin: INTEGER; x: POINTER; y: POINTER; opt: INTEGER) 
 		do
 			c_plbin (nbin, x, y, opt)
 		end
 
-	plbtime (year: POINTER; month: POINTER; day: POINTER; hour: POINTER; min: POINTER; sec: POINTER; ctime: REAL_64)
+	plbtime (year: POINTER; month: POINTER; day: POINTER; hour: POINTER; min: POINTER; sec: POINTER; ctime: REAL_64) 
 		do
 			c_plbtime (year, month, day, hour, min, sec, ctime)
 		end
@@ -69,17 +69,17 @@ feature -- Access
 			]"
 		end
 
-	plbox (xopt: STRING; xtick: REAL_64; nxsub: INTEGER; yopt: STRING; ytick: REAL_64; nysub: INTEGER)
+	plbox (xopt: STRING; xtick: REAL_64; nxsub: INTEGER; yopt: STRING; ytick: REAL_64; nysub: INTEGER) 
 		do
 			c_plbox ( (create {C_STRING}.make (xopt)).item, xtick, nxsub,  (create {C_STRING}.make (yopt)).item, ytick, nysub)
 		end
 
-	plbox3 (xopt: STRING; xlabel: STRING; xtick: REAL_64; nxsub: INTEGER; yopt: STRING; ylabel: STRING; ytick: REAL_64; nysub: INTEGER; zopt: STRING; zlabel: STRING; ztick: REAL_64; nzsub: INTEGER)
+	plbox3 (xopt: STRING; xlabel: STRING; xtick: REAL_64; nxsub: INTEGER; yopt: STRING; ylabel: STRING; ytick: REAL_64; nysub: INTEGER; zopt: STRING; zlabel: STRING; ztick: REAL_64; nzsub: INTEGER) 
 		do
 			c_plbox3 ( (create {C_STRING}.make (xopt)).item,  (create {C_STRING}.make (xlabel)).item, xtick, nxsub,  (create {C_STRING}.make (yopt)).item,  (create {C_STRING}.make (ylabel)).item, ytick, nysub,  (create {C_STRING}.make (zopt)).item,  (create {C_STRING}.make (zlabel)).item, ztick, nzsub)
 		end
 
-	plcalc_world (rx: REAL_64; ry: REAL_64; wx: POINTER; wy: POINTER; window: POINTER)
+	plcalc_world (rx: REAL_64; ry: REAL_64; wx: POINTER; wy: POINTER; window: POINTER) 
 		do
 			c_plcalc_world (rx, ry, wx, wy, window)
 		end
@@ -120,7 +120,7 @@ feature -- Access
 			]"
 		end
 
-	plcont (f: POINTER; nx: INTEGER; ny: INTEGER; kx: INTEGER; lx: INTEGER; ky: INTEGER; ly: INTEGER; clevel: POINTER; nlevel: INTEGER; pltr: POINTER; pltr_data: POINTER)
+	plcont (f: POINTER; nx: INTEGER; ny: INTEGER; kx: INTEGER; lx: INTEGER; ky: INTEGER; ly: INTEGER; clevel: POINTER; nlevel: INTEGER; pltr: POINTER; pltr_data: POINTER) 
 		do
 			c_plcont (f, nx, ny, kx, lx, ky, ly, clevel, nlevel, pltr, pltr_data)
 		end
@@ -134,7 +134,7 @@ feature -- Access
 			]"
 		end
 
-	plctime (year: INTEGER; month: INTEGER; day: INTEGER; hour: INTEGER; min: INTEGER; sec: REAL_64; ctime: POINTER)
+	plctime (year: INTEGER; month: INTEGER; day: INTEGER; hour: INTEGER; min: INTEGER; sec: REAL_64; ctime: POINTER) 
 		do
 			c_plctime (year, month, day, hour, min, sec, ctime)
 		end
@@ -184,12 +184,12 @@ feature -- Access
 			]"
 		end
 
-	plerrx (n: INTEGER; xmin: POINTER; xmax: POINTER; y: POINTER)
+	plerrx (n: INTEGER; xmin: POINTER; xmax: POINTER; y: POINTER) 
 		do
 			c_plerrx (n, xmin, xmax, y)
 		end
 
-	plerry (n: INTEGER; x: POINTER; ymin: POINTER; ymax: POINTER)
+	plerry (n: INTEGER; x: POINTER; ymin: POINTER; ymax: POINTER) 
 		do
 			c_plerry (n, x, ymin, ymax)
 		end
@@ -203,12 +203,12 @@ feature -- Access
 			]"
 		end
 
-	plfill (n: INTEGER; x: POINTER; y: POINTER)
+	plfill (n: INTEGER; x: POINTER; y: POINTER) 
 		do
 			c_plfill (n, x, y)
 		end
 
-	plfill3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER)
+	plfill3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER) 
 		do
 			c_plfill3 (n, x, y, z)
 		end
@@ -240,57 +240,57 @@ feature -- Access
 			]"
 		end
 
-	plgchr (p_def: POINTER; p_ht: POINTER)
+	plgchr (p_def: POINTER; p_ht: POINTER) 
 		do
 			c_plgchr (p_def, p_ht)
 		end
 
-	plgcmap1_range (min_color: POINTER; max_color: POINTER)
+	plgcmap1_range (min_color: POINTER; max_color: POINTER) 
 		do
 			c_plgcmap1_range (min_color, max_color)
 		end
 
-	plgcol0 (icol0: INTEGER; r: POINTER; g: POINTER; b: POINTER)
+	plgcol0 (icol0: INTEGER; r: POINTER; g: POINTER; b: POINTER) 
 		do
 			c_plgcol0 (icol0, r, g, b)
 		end
 
-	plgcol0a (icol0: INTEGER; r: POINTER; g: POINTER; b: POINTER; alpha: POINTER)
+	plgcol0a (icol0: INTEGER; r: POINTER; g: POINTER; b: POINTER; alpha: POINTER) 
 		do
 			c_plgcol0a (icol0, r, g, b, alpha)
 		end
 
-	plgcolbg (r: POINTER; g: POINTER; b: POINTER)
+	plgcolbg (r: POINTER; g: POINTER; b: POINTER) 
 		do
 			c_plgcolbg (r, g, b)
 		end
 
-	plgcolbga (r: POINTER; g: POINTER; b: POINTER; alpha: POINTER)
+	plgcolbga (r: POINTER; g: POINTER; b: POINTER; alpha: POINTER) 
 		do
 			c_plgcolbga (r, g, b, alpha)
 		end
 
-	plgcompression (compression: POINTER)
+	plgcompression (compression: POINTER) 
 		do
 			c_plgcompression (compression)
 		end
 
-	plgdev (p_dev: STRING)
+	plgdev (p_dev: STRING) 
 		do
 			c_plgdev ( (create {C_STRING}.make (p_dev)).item)
 		end
 
-	plgdidev (p_mar: POINTER; p_aspect: POINTER; p_jx: POINTER; p_jy: POINTER)
+	plgdidev (p_mar: POINTER; p_aspect: POINTER; p_jx: POINTER; p_jy: POINTER) 
 		do
 			c_plgdidev (p_mar, p_aspect, p_jx, p_jy)
 		end
 
-	plgdiori (p_rot: POINTER)
+	plgdiori (p_rot: POINTER) 
 		do
 			c_plgdiori (p_rot)
 		end
 
-	plgdiplt (p_xmin: POINTER; p_ymin: POINTER; p_xmax: POINTER; p_ymax: POINTER)
+	plgdiplt (p_xmin: POINTER; p_ymin: POINTER; p_xmax: POINTER; p_ymax: POINTER) 
 		do
 			c_plgdiplt (p_xmin, p_ymin, p_xmax, p_ymax)
 		end
@@ -304,32 +304,32 @@ feature -- Access
 			]"
 		end
 
-	plgfci (p_fci: POINTER)
+	plgfci (p_fci: POINTER) 
 		do
 			c_plgfci (p_fci)
 		end
 
-	plgfam (p_fam: POINTER; p_num: POINTER; p_bmax: POINTER)
+	plgfam (p_fam: POINTER; p_num: POINTER; p_bmax: POINTER) 
 		do
 			c_plgfam (p_fam, p_num, p_bmax)
 		end
 
-	plgfnam (fnam: STRING)
+	plgfnam (fnam: STRING) 
 		do
 			c_plgfnam ( (create {C_STRING}.make (fnam)).item)
 		end
 
-	plgfont (p_family: POINTER; p_style: POINTER; p_weight: POINTER)
+	plgfont (p_family: POINTER; p_style: POINTER; p_weight: POINTER) 
 		do
 			c_plgfont (p_family, p_style, p_weight)
 		end
 
-	plglevel (p_level: POINTER)
+	plglevel (p_level: POINTER) 
 		do
 			c_plglevel (p_level)
 		end
 
-	plgpage (p_xp: POINTER; p_yp: POINTER; p_xleng: POINTER; p_yleng: POINTER; p_xoff: POINTER; p_yoff: POINTER)
+	plgpage (p_xp: POINTER; p_yp: POINTER; p_xleng: POINTER; p_yleng: POINTER; p_xoff: POINTER; p_yoff: POINTER) 
 		do
 			c_plgpage (p_xp, p_yp, p_xleng, p_yleng, p_xoff, p_yoff)
 		end
@@ -343,18 +343,18 @@ feature -- Access
 			]"
 		end
 
-	plgradient (n: INTEGER; x: POINTER; y: POINTER; angle: REAL_64)
+	plgradient (n: INTEGER; x: POINTER; y: POINTER; angle: REAL_64) 
 		do
 			c_plgradient (n, x, y, angle)
 		end
 
 
-	plgspa (xmin: POINTER; xmax: POINTER; ymin: POINTER; ymax: POINTER)
+	plgspa (xmin: POINTER; xmax: POINTER; ymin: POINTER; ymax: POINTER) 
 		do
 			c_plgspa (xmin, xmax, ymin, ymax)
 		end
 
-	plgstrm (p_strm: POINTER)
+	plgstrm (p_strm: POINTER) 
 		do
 			c_plgstrm (p_strm)
 		end
@@ -368,37 +368,37 @@ feature -- Access
 			p_ver.append (c_str.string)
 		end
 
-	plgvpd (p_xmin: POINTER; p_xmax: POINTER; p_ymin: POINTER; p_ymax: POINTER)
+	plgvpd (p_xmin: POINTER; p_xmax: POINTER; p_ymin: POINTER; p_ymax: POINTER) 
 		do
 			c_plgvpd (p_xmin, p_xmax, p_ymin, p_ymax)
 		end
 
-	plgvpw (p_xmin: POINTER; p_xmax: POINTER; p_ymin: POINTER; p_ymax: POINTER)
+	plgvpw (p_xmin: POINTER; p_xmax: POINTER; p_ymin: POINTER; p_ymax: POINTER) 
 		do
 			c_plgvpw (p_xmin, p_xmax, p_ymin, p_ymax)
 		end
 
-	plgxax (p_digmax: POINTER; p_digits: POINTER)
+	plgxax (p_digmax: POINTER; p_digits: POINTER) 
 		do
 			c_plgxax (p_digmax, p_digits)
 		end
 
-	plgyax (p_digmax: POINTER; p_digits: POINTER)
+	plgyax (p_digmax: POINTER; p_digits: POINTER) 
 		do
 			c_plgyax (p_digmax, p_digits)
 		end
 
-	plgzax (p_digmax: POINTER; p_digits: POINTER)
+	plgzax (p_digmax: POINTER; p_digits: POINTER) 
 		do
 			c_plgzax (p_digmax, p_digits)
 		end
 
-	plhist (n: INTEGER; data: POINTER; datmin: REAL_64; datmax: REAL_64; nbin: INTEGER; opt: INTEGER)
+	plhist (n: INTEGER; data: POINTER; datmin: REAL_64; datmax: REAL_64; nbin: INTEGER; opt: INTEGER) 
 		do
 			c_plhist (n, data, datmin, datmax, nbin, opt)
 		end
 
-	plhlsrgb (h: REAL_64; l: REAL_64; s: REAL_64; p_r: POINTER; p_g: POINTER; p_b: POINTER)
+	plhlsrgb (h: REAL_64; l: REAL_64; s: REAL_64; p_r: POINTER; p_g: POINTER; p_b: POINTER) 
 		do
 			c_plhlsrgb (h, l, s, p_r, p_g, p_b)
 		end
@@ -421,13 +421,13 @@ feature -- Access
 			]"
 		end
 
-	pllab (xlabel: STRING; ylabel: STRING; tlabel: STRING)
+	pllab (xlabel: STRING; ylabel: STRING; tlabel: STRING) 
 		do
 			c_pllab ( (create {C_STRING}.make (xlabel)).item,  (create {C_STRING}.make (ylabel)).item,  (create {C_STRING}.make (tlabel)).item)
 		end
 
 
-	plcolorbar (p_colorbar_width: POINTER; p_colorbar_height: POINTER; opt: INTEGER; position: INTEGER; x: REAL_64; y: REAL_64; x_length: REAL_64; y_length: REAL_64; bg_color: INTEGER; bb_color: INTEGER; bb_style: INTEGER; low_cap_color: REAL_64; high_cap_color: REAL_64; cont_color: INTEGER; cont_width: REAL_64; n_labels: INTEGER; label_opts: POINTER; labels: STRING; n_axes: INTEGER; axis_opts: STRING; ticks: POINTER; sub_ticks: POINTER; n_values: POINTER; values: POINTER)
+	plcolorbar (p_colorbar_width: POINTER; p_colorbar_height: POINTER; opt: INTEGER; position: INTEGER; x: REAL_64; y: REAL_64; x_length: REAL_64; y_length: REAL_64; bg_color: INTEGER; bb_color: INTEGER; bb_style: INTEGER; low_cap_color: REAL_64; high_cap_color: REAL_64; cont_color: INTEGER; cont_width: REAL_64; n_labels: INTEGER; label_opts: POINTER; labels: STRING; n_axes: INTEGER; axis_opts: STRING; ticks: POINTER; sub_ticks: POINTER; n_values: POINTER; values: POINTER) 
 		do
 			c_plcolorbar (p_colorbar_width, p_colorbar_height, opt, position, x, y, x_length, y_length, bg_color, bb_color, bb_style, low_cap_color, high_cap_color, cont_color, cont_width, n_labels, label_opts,  (create {C_STRING}.make (labels)).item, n_axes,  (create {C_STRING}.make (axis_opts)).item, ticks, sub_ticks, n_values, values)
 		end
@@ -441,12 +441,12 @@ feature -- Access
 			]"
 		end
 
-	plline (n: INTEGER; x: POINTER; y: POINTER)
+	plline (n: INTEGER; x: POINTER; y: POINTER) 
 		do
 			c_plline (n, x, y)
 		end
 
-	plline3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER)
+	plline3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER) 
 		do
 			c_plline3 (n, x, y, z)
 		end
@@ -460,77 +460,77 @@ feature -- Access
 			]"
 		end
 
-	plmap (mapform: POINTER; name: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64)
+	plmap (mapform: POINTER; name: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64) 
 		do
 			c_plmap (mapform,  (create {C_STRING}.make (name)).item, minx, maxx, miny, maxy)
 		end
 
-	plmapline (mapform: POINTER; name: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64; plotentries: POINTER; nplotentries: INTEGER)
+	plmapline (mapform: POINTER; name: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64; plotentries: POINTER; nplotentries: INTEGER) 
 		do
 			c_plmapline (mapform,  (create {C_STRING}.make (name)).item, minx, maxx, miny, maxy, plotentries, nplotentries)
 		end
 
-	plmapstring (mapform: POINTER; name: STRING; string: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64; plotentries: POINTER; nplotentries: INTEGER)
+	plmapstring (mapform: POINTER; name: STRING; string: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64; plotentries: POINTER; nplotentries: INTEGER) 
 		do
 			c_plmapstring (mapform,  (create {C_STRING}.make (name)).item,  (create {C_STRING}.make (string)).item, minx, maxx, miny, maxy, plotentries, nplotentries)
 		end
 
-	plmaptex (mapform: POINTER; name: STRING; dx: REAL_64; dy: REAL_64; just: REAL_64; text: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64; plotentry: INTEGER)
+	plmaptex (mapform: POINTER; name: STRING; dx: REAL_64; dy: REAL_64; just: REAL_64; text: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64; plotentry: INTEGER) 
 		do
 			c_plmaptex (mapform,  (create {C_STRING}.make (name)).item, dx, dy, just,  (create {C_STRING}.make (text)).item, minx, maxx, miny, maxy, plotentry)
 		end
 
-	plmapfill (mapform: POINTER; name: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64; plotentries: POINTER; nplotentries: INTEGER)
+	plmapfill (mapform: POINTER; name: STRING; minx: REAL_64; maxx: REAL_64; miny: REAL_64; maxy: REAL_64; plotentries: POINTER; nplotentries: INTEGER) 
 		do
 			c_plmapfill (mapform,  (create {C_STRING}.make (name)).item, minx, maxx, miny, maxy, plotentries, nplotentries)
 		end
 
-	plmeridians (mapform: POINTER; dlong: REAL_64; dlat: REAL_64; minlong: REAL_64; maxlong: REAL_64; minlat: REAL_64; maxlat: REAL_64)
+	plmeridians (mapform: POINTER; dlong: REAL_64; dlat: REAL_64; minlong: REAL_64; maxlong: REAL_64; minlat: REAL_64; maxlat: REAL_64) 
 		do
 			c_plmeridians (mapform, dlong, dlat, minlong, maxlong, minlat, maxlat)
 		end
 
-	plmesh (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER)
+	plmesh (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER) 
 		do
 			c_plmesh (x, y, z, nx, ny, opt)
 		end
 
-	plmeshc (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER; clevel: POINTER; nlevel: INTEGER)
+	plmeshc (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER; clevel: POINTER; nlevel: INTEGER) 
 		do
 			c_plmeshc (x, y, z, nx, ny, opt, clevel, nlevel)
 		end
 
-	plmkstrm (p_strm: POINTER)
+	plmkstrm (p_strm: POINTER) 
 		do
 			c_plmkstrm (p_strm)
 		end
 
-	plmtex (side: STRING; disp: REAL_64; pos: REAL_64; just: REAL_64; text: STRING)
+	plmtex (side: STRING; disp: REAL_64; pos: REAL_64; just: REAL_64; text: STRING) 
 		do
 			c_plmtex ( (create {C_STRING}.make (side)).item, disp, pos, just,  (create {C_STRING}.make (text)).item)
 		end
 
-	plmtex3 (side: STRING; disp: REAL_64; pos: REAL_64; just: REAL_64; text: STRING)
+	plmtex3 (side: STRING; disp: REAL_64; pos: REAL_64; just: REAL_64; text: STRING) 
 		do
 			c_plmtex3 ( (create {C_STRING}.make (side)).item, disp, pos, just,  (create {C_STRING}.make (text)).item)
 		end
 
-	plot3d (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER; side: INTEGER)
+	plot3d (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER; side: INTEGER) 
 		do
 			c_plot3d (x, y, z, nx, ny, opt, side)
 		end
 
-	plot3dc (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER; clevel: POINTER; nlevel: INTEGER)
+	plot3dc (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER; clevel: POINTER; nlevel: INTEGER) 
 		do
 			c_plot3dc (x, y, z, nx, ny, opt, clevel, nlevel)
 		end
 
-	plot3dcl (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER; clevel: POINTER; nlevel: INTEGER; indexxmin: INTEGER; indexxmax: INTEGER; indexymin: POINTER; indexymax: POINTER)
+	plot3dcl (x: POINTER; y: POINTER; z: POINTER; nx: INTEGER; ny: INTEGER; opt: INTEGER; clevel: POINTER; nlevel: INTEGER; indexxmin: INTEGER; indexxmax: INTEGER; indexymin: POINTER; indexymax: POINTER) 
 		do
 			c_plot3dcl (x, y, z, nx, ny, opt, clevel, nlevel, indexxmin, indexxmax, indexymin, indexymax)
 		end
 
-	plpat (nlin: INTEGER; inc: POINTER; del: POINTER)
+	plpat (nlin: INTEGER; inc: POINTER; del: POINTER) 
 		do
 			c_plpat (nlin, inc, del)
 		end
@@ -544,17 +544,17 @@ feature -- Access
 			]"
 		end
 
-	plpoin (n: INTEGER; x: POINTER; y: POINTER; code: INTEGER)
+	plpoin (n: INTEGER; x: POINTER; y: POINTER; code: INTEGER) 
 		do
 			c_plpoin (n, x, y, code)
 		end
 
-	plpoin3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER; code: INTEGER)
+	plpoin3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER; code: INTEGER) 
 		do
 			c_plpoin3 (n, x, y, z, code)
 		end
 
-	plpoly3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER; draw: POINTER; ifcc: INTEGER)
+	plpoly3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER; draw: POINTER; ifcc: INTEGER) 
 		do
 			c_plpoly3 (n, x, y, z, draw, ifcc)
 		end
@@ -577,12 +577,12 @@ feature -- Access
 			]"
 		end
 
-	plptex (x: REAL_64; y: REAL_64; dx: REAL_64; dy: REAL_64; just: REAL_64; text: STRING)
+	plptex (x: REAL_64; y: REAL_64; dx: REAL_64; dy: REAL_64; just: REAL_64; text: STRING) 
 		do
 			c_plptex (x, y, dx, dy, just,  (create {C_STRING}.make (text)).item)
 		end
 
-	plptex3 (wx: REAL_64; wy: REAL_64; wz: REAL_64; dx: REAL_64; dy: REAL_64; dz: REAL_64; sx: REAL_64; sy: REAL_64; sz: REAL_64; just: REAL_64; text: STRING)
+	plptex3 (wx: REAL_64; wy: REAL_64; wz: REAL_64; dx: REAL_64; dy: REAL_64; dz: REAL_64; sx: REAL_64; sy: REAL_64; sz: REAL_64; just: REAL_64; text: STRING) 
 		do
 			c_plptex3 (wx, wy, wz, dx, dy, dz, sx, sy, sz, just,  (create {C_STRING}.make (text)).item)
 		end
@@ -605,7 +605,7 @@ feature -- Access
 			]"
 		end
 
-	plrgbhls (r: REAL_64; g: REAL_64; b: REAL_64; p_h: POINTER; p_l: POINTER; p_s: POINTER)
+	plrgbhls (r: REAL_64; g: REAL_64; b: REAL_64; p_h: POINTER; p_l: POINTER; p_s: POINTER) 
 		do
 			c_plrgbhls (r, g, b, p_h, p_l, p_s)
 		end
@@ -620,7 +620,7 @@ feature -- Access
 		end
 
 
-	plscmap0a (r: POINTER; g: POINTER; b: POINTER; alpha: POINTER; ncol0: INTEGER)
+	plscmap0a (r: POINTER; g: POINTER; b: POINTER; alpha: POINTER; ncol0: INTEGER) 
 		do
 			c_plscmap0a (r, g, b, alpha, ncol0)
 		end
@@ -634,22 +634,22 @@ feature -- Access
 			]"
 		end
 
-	plscmap1 (r: POINTER; g: POINTER; b: POINTER; ncol1: INTEGER)
+	plscmap1 (r: POINTER; g: POINTER; b: POINTER; ncol1: INTEGER) 
 		do
 			c_plscmap1 (r, g, b, ncol1)
 		end
 
-	plscmap1a (r: POINTER; g: POINTER; b: POINTER; alpha: POINTER; ncol1: INTEGER)
+	plscmap1a (r: POINTER; g: POINTER; b: POINTER; alpha: POINTER; ncol1: INTEGER) 
 		do
 			c_plscmap1a (r, g, b, alpha, ncol1)
 		end
 
-	plscmap1l (itype: INTEGER; npts: INTEGER; intensity: POINTER; coord1: POINTER; coord2: POINTER; coord3: POINTER; alt_hue_path: POINTER)
+	plscmap1l (itype: INTEGER; npts: INTEGER; intensity: POINTER; coord1: POINTER; coord2: POINTER; coord3: POINTER; alt_hue_path: POINTER) 
 		do
 			c_plscmap1l (itype, npts, intensity, coord1, coord2, coord3, alt_hue_path)
 		end
 
-	plscmap1la (itype: INTEGER; npts: INTEGER; intensity: POINTER; coord1: POINTER; coord2: POINTER; coord3: POINTER; alpha: POINTER; alt_hue_path: POINTER)
+	plscmap1la (itype: INTEGER; npts: INTEGER; intensity: POINTER; coord1: POINTER; coord2: POINTER; coord3: POINTER; alpha: POINTER; alt_hue_path: POINTER) 
 		do
 			c_plscmap1la (itype, npts, intensity, coord1, coord2, coord3, alpha, alt_hue_path)
 		end
@@ -726,7 +726,7 @@ feature -- Access
 			]"
 		end
 
-	plsdev (devname: STRING)
+	plsdev (devname: STRING) 
 		do
 			c_plsdev ( (create {C_STRING}.make (devname)).item)
 		end
@@ -794,7 +794,7 @@ feature -- Access
 			]"
 		end
 
-	plsesc (esc: CHARACTER)
+	plsesc (esc: CHARACTER) 
 		do
 			c_plsesc (esc)
 		end
@@ -817,7 +817,7 @@ feature -- Access
 			]"
 		end
 
-	plsfnam (fnam: STRING)
+	plsfnam (fnam: STRING) 
 		do
 			c_plsfnam ( (create {C_STRING}.make (fnam)).item)
 		end
@@ -831,17 +831,17 @@ feature -- Access
 			]"
 		end
 
-	plshade (a: POINTER; nx: INTEGER; ny: INTEGER; defined: POINTER; xmin: REAL_64; xmax: REAL_64; ymin: REAL_64; ymax: REAL_64; shade_min: REAL_64; shade_max: REAL_64; sh_cmap: INTEGER; sh_color: REAL_64; sh_width: REAL_64; min_color: INTEGER; min_width: REAL_64; max_color: INTEGER; max_width: REAL_64; fill: POINTER; rectangular: INTEGER; pltr: POINTER; pltr_data: POINTER)
+	plshade (a: POINTER; nx: INTEGER; ny: INTEGER; defined: POINTER; xmin: REAL_64; xmax: REAL_64; ymin: REAL_64; ymax: REAL_64; shade_min: REAL_64; shade_max: REAL_64; sh_cmap: INTEGER; sh_color: REAL_64; sh_width: REAL_64; min_color: INTEGER; min_width: REAL_64; max_color: INTEGER; max_width: REAL_64; fill: POINTER; rectangular: INTEGER; pltr: POINTER; pltr_data: POINTER) 
 		do
 			c_plshade (a, nx, ny, defined, xmin, xmax, ymin, ymax, shade_min, shade_max, sh_cmap, sh_color, sh_width, min_color, min_width, max_color, max_width, fill, rectangular, pltr, pltr_data)
 		end
 
-	plshades (a: POINTER; nx: INTEGER; ny: INTEGER; defined: POINTER; xmin: REAL_64; xmax: REAL_64; ymin: REAL_64; ymax: REAL_64; clevel: POINTER; nlevel: INTEGER; fill_width: REAL_64; cont_color: INTEGER; cont_width: REAL_64; fill: POINTER; rectangular: INTEGER; pltr: POINTER; pltr_data: POINTER)
+	plshades (a: POINTER; nx: INTEGER; ny: INTEGER; defined: POINTER; xmin: REAL_64; xmax: REAL_64; ymin: REAL_64; ymax: REAL_64; clevel: POINTER; nlevel: INTEGER; fill_width: REAL_64; cont_color: INTEGER; cont_width: REAL_64; fill: POINTER; rectangular: INTEGER; pltr: POINTER; pltr_data: POINTER) 
 		do
 			c_plshades (a, nx, ny, defined, xmin, xmax, ymin, ymax, clevel, nlevel, fill_width, cont_color, cont_width, fill, rectangular, pltr, pltr_data)
 		end
 
-	plslabelfunc (label_func: POINTER; label_data: POINTER)
+	plslabelfunc (label_func: POINTER; label_data: POINTER) 
 		do
 			c_plslabelfunc (label_func, label_data)
 		end
@@ -855,12 +855,12 @@ feature -- Access
 			]"
 		end
 
-	plsmem (maxx: INTEGER; maxy: INTEGER; plotmem: POINTER)
+	plsmem (maxx: INTEGER; maxy: INTEGER; plotmem: POINTER) 
 		do
 			c_plsmem (maxx, maxy, plotmem)
 		end
 
-	plsmema (maxx: INTEGER; maxy: INTEGER; plotmem: POINTER)
+	plsmema (maxx: INTEGER; maxy: INTEGER; plotmem: POINTER) 
 		do
 			c_plsmema (maxx, maxy, plotmem)
 		end
@@ -892,12 +892,12 @@ feature -- Access
 			]"
 		end
 
-	plspal0 (filename: STRING)
+	plspal0 (filename: STRING) 
 		do
 			c_plspal0 ( (create {C_STRING}.make (filename)).item)
 		end
 
-	plspal1 (filename: STRING; interpolate: INTEGER)
+	plspal1 (filename: STRING; interpolate: INTEGER) 
 		do
 			c_plspal1 ( (create {C_STRING}.make (filename)).item, interpolate)
 		end
@@ -947,22 +947,22 @@ feature -- Access
 			]"
 		end
 
-	plstart (devname: STRING; nx: INTEGER; ny: INTEGER)
+	plstart (devname: STRING; nx: INTEGER; ny: INTEGER) 
 		do
 			c_plstart ( (create {C_STRING}.make (devname)).item, nx, ny)
 		end
 
-	plstransform (coordinate_transform: POINTER; coordinate_transform_data: POINTER)
+	plstransform (coordinate_transform: POINTER; coordinate_transform_data: POINTER) 
 		do
 			c_plstransform (coordinate_transform, coordinate_transform_data)
 		end
 
-	plstring (n: INTEGER; x: POINTER; y: POINTER; string: STRING)
+	plstring (n: INTEGER; x: POINTER; y: POINTER; string: STRING) 
 		do
 			c_plstring (n, x, y,  (create {C_STRING}.make (string)).item)
 		end
 
-	plstring3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER; string: STRING)
+	plstring3 (n: INTEGER; x: POINTER; y: POINTER; z: POINTER; string: STRING) 
 		do
 			c_plstring3 (n, x, y, z,  (create {C_STRING}.make (string)).item)
 		end
@@ -976,7 +976,7 @@ feature -- Access
 			]"
 		end
 
-	plstripc (id: POINTER; xspec: STRING; yspec: STRING; xmin: REAL_64; xmax: REAL_64; xjump: REAL_64; ymin: REAL_64; ymax: REAL_64; xlpos: REAL_64; ylpos: REAL_64; y_ascl: INTEGER; acc: INTEGER; colbox: INTEGER; collab: INTEGER; colline: POINTER; styline: POINTER; legline: STRING; labx: STRING; laby: STRING; labtop: STRING)
+	plstripc (id: POINTER; xspec: STRING; yspec: STRING; xmin: REAL_64; xmax: REAL_64; xjump: REAL_64; ymin: REAL_64; ymax: REAL_64; xlpos: REAL_64; ylpos: REAL_64; y_ascl: INTEGER; acc: INTEGER; colbox: INTEGER; collab: INTEGER; colline: POINTER; styline: POINTER; legline: STRING; labx: STRING; laby: STRING; labtop: STRING) 
 		do
 			c_plstripc (id,  (create {C_STRING}.make (xspec)).item,  (create {C_STRING}.make (yspec)).item, xmin, xmax, xjump, ymin, ymax, xlpos, ylpos, y_ascl, acc, colbox, collab, colline, styline,  (create {C_STRING}.make (legline)).item,  (create {C_STRING}.make (labx)).item,  (create {C_STRING}.make (laby)).item,  (create {C_STRING}.make (labtop)).item)
 		end
@@ -990,24 +990,24 @@ feature -- Access
 			]"
 		end
 
-	plimagefr (idata: POINTER; nx: INTEGER; ny: INTEGER; xmin: REAL_64; xmax: REAL_64; ymin: REAL_64; ymax: REAL_64; zmin: REAL_64; zmax: REAL_64; valuemin: REAL_64; valuemax: REAL_64; pltr: POINTER; pltr_data: POINTER)
+	plimagefr (idata: POINTER; nx: INTEGER; ny: INTEGER; xmin: REAL_64; xmax: REAL_64; ymin: REAL_64; ymax: REAL_64; zmin: REAL_64; zmax: REAL_64; valuemin: REAL_64; valuemax: REAL_64; pltr: POINTER; pltr_data: POINTER) 
 		do
 			c_plimagefr (idata, nx, ny, xmin, xmax, ymin, ymax, zmin, zmax, valuemin, valuemax, pltr, pltr_data)
 		end
 
-	plimage (idata: POINTER; nx: INTEGER; ny: INTEGER; xmin: REAL_64; xmax: REAL_64; ymin: REAL_64; ymax: REAL_64; zmin: REAL_64; zmax: REAL_64; dxmin: REAL_64; dxmax: REAL_64; dymin: REAL_64; dymax: REAL_64)
+	plimage (idata: POINTER; nx: INTEGER; ny: INTEGER; xmin: REAL_64; xmax: REAL_64; ymin: REAL_64; ymax: REAL_64; zmin: REAL_64; zmax: REAL_64; dxmin: REAL_64; dxmax: REAL_64; dymin: REAL_64; dymax: REAL_64) 
 		do
 			c_plimage (idata, nx, ny, xmin, xmax, ymin, ymax, zmin, zmax, dxmin, dxmax, dymin, dymax)
 		end
 
-	plstyl (nms: INTEGER; mark: POINTER; space: POINTER)
+	plstyl (nms: INTEGER; mark: POINTER; space: POINTER) 
 		do
 			c_plstyl (nms, mark, space)
 		end
 
 
 
-	plsvect (arrowx: POINTER; arrowy: POINTER; npts: INTEGER; fill: INTEGER)
+	plsvect (arrowx: POINTER; arrowy: POINTER; npts: INTEGER; fill: INTEGER) 
 		do
 			c_plsvect (arrowx, arrowy, npts, fill)
 		end
@@ -1039,7 +1039,7 @@ feature -- Access
 			]"
 		end
 
-	plsym (n: INTEGER; x: POINTER; y: POINTER; code: INTEGER)
+	plsym (n: INTEGER; x: POINTER; y: POINTER; code: INTEGER) 
 		do
 			c_plsym (n, x, y, code)
 		end
@@ -1062,7 +1062,7 @@ feature -- Access
 			]"
 		end
 
-	pltimefmt (fmt: STRING)
+	pltimefmt (fmt: STRING) 
 		do
 			c_pltimefmt ( (create {C_STRING}.make (fmt)).item)
 		end
@@ -1076,7 +1076,7 @@ feature -- Access
 			]"
 		end
 
-	plvect (u: POINTER; v: POINTER; nx: INTEGER; ny: INTEGER; scale: REAL_64; pltr: POINTER; pltr_data: POINTER)
+	plvect (u: POINTER; v: POINTER; nx: INTEGER; ny: INTEGER; scale: REAL_64; pltr: POINTER; pltr_data: POINTER) 
 		do
 			c_plvect (u, v, nx, ny, scale, pltr, pltr_data)
 		end
@@ -1135,27 +1135,41 @@ feature -- Access
 			]"
 		end
 
-	plxormod (mode: INTEGER; status: POINTER)
+	plxormod (mode: INTEGER; status: POINTER) 
 		do
 			c_plxormod (mode, status)
 		end
 
 
-	pl_merge_opts (options: PLOPTION_TABLE_STRUCT_API; name: STRING; notes: POINTER): INTEGER
-		do
-			Result := c_pl_merge_opts (options.item,  (create {C_STRING}.make (name)).item, notes)
-		end
-
-	plsetopt (opt: STRING; optarg: STRING): INTEGER
+	plsetopt (opt: STRING; optarg: STRING): INTEGER 
 		do
 			Result := c_plsetopt ( (create {C_STRING}.make (opt)).item,  (create {C_STRING}.make (optarg)).item)
 		end
 
-	plparseopts (p_argc: POINTER; argv: STRING; mode: INTEGER): INTEGER
+	plparseopts (p_argc: POINTER; argv: STRING; mode: INTEGER): INTEGER 
 		do
 			Result := c_plparseopts (p_argc,  (create {C_STRING}.make (argv)).item, mode)
 		end
 
+	pl_static2d_grid (ziliffe: POINTER; zstatic: POINTER; nx: INTEGER; ny: INTEGER) 
+		do
+			c_pl_static2d_grid (ziliffe, zstatic, nx, ny)
+		end
+
+	pl_alloc2d_grid (f: POINTER; nx: INTEGER; ny: INTEGER) 
+		do
+			c_pl_alloc2d_grid (f, nx, ny)
+		end
+
+	pl_free2d_grid (f: POINTER; nx: INTEGER; ny: INTEGER) 
+		do
+			c_pl_free2d_grid (f, nx, ny)
+		end
+
+	pl_min_max2d_grid (f: POINTER; nx: INTEGER; ny: INTEGER; fmax: POINTER; fmin: POINTER) 
+		do
+			c_pl_min_max2d_grid (f, nx, ny, fmax, fmin)
+		end
 
 feature -- Externals
 
@@ -2050,15 +2064,6 @@ feature -- Externals
 			]"
 		end
 
-	c_pl_merge_opts (options: POINTER; name: POINTER; notes: POINTER): INTEGER
-		external
-			"C inline use <plplot.h>"
-		alias
-			"[
-				return plMergeOpts ((PLOptionTable*)$options, (PLCHAR_VECTOR)$name, (PLCHAR_VECTOR*)$notes);
-			]"
-		end
-
 	c_plsetopt (opt: POINTER; optarg: POINTER): INTEGER
 		external
 			"C inline use <plplot.h>"
@@ -2112,6 +2117,8 @@ feature -- Externals
 				plMinMax2dGrid ((PLFLT_MATRIX)$f, (PLINT)$nx, (PLINT)$ny, (PLFLT_NC_SCALAR)$fmax, (PLFLT_NC_SCALAR)$fmin);
 			]"
 		end
+
+feature -- Externals Address
 
 end
 

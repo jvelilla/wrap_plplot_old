@@ -6,7 +6,7 @@ execute them form the library folder.
 
 Before to regenerated the generated code, remove the folder generated_wrapper folder.
 
-## Using geant
+## Using WrapC with geant
 Wrap plplot library
 $LIB_PATH is the path to the library folder where you checkout the wrap_plplot library.
 
